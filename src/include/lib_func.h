@@ -20,3 +20,12 @@ extern "C" {
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+// 2つのitemを比較する関数（keyで比較）
+// a < b: 負値, a == b: 0, a > b: 正値
+static inline int item_cmp(const item* a, const item* b)
+{
+    if (a->key < b->key) return -1;
+    if (a->key > b->key) return 1;
+    return 0;
+}
